@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+/* --- BASE & TYPOGRAPHIE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: linear-gradient(180deg, #0f0c29 0%, #d35400 70%, #ff8c00 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -1px;
+}
+
+/* --- BARRE DE NAVIGATION --- */
+.BarreNavigation {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.IdentiteHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.IdentiteHeader h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #2c3e50;
+  line-height: 1.2;
+}
+
+.EmailLienHeader {
+  font-size: 0.85rem;
+  color: #d35400;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.EmailLienHeader:hover {
+  color: #ff8c00;
+  text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: #d35400; }
+
+/* --- MISE EN PAGE SECTIONS --- */
+.SectionConteneur {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+}
+
+.SeparateurSection {
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 40px 0;
+}
+
+.BandeauTitre {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+/* --- GRILLES & CARTES --- */
+.GrilleExperiences, .GrilleProjets {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.CarteExperience, .CarteProjet {
+  background: #000000;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.CarteExperience:hover, .CarteProjet:hover { transform: translateY(-5px); }
+
+.CarteExperience img, .CarteProjet img {
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* --- SECTION CENTRES D'INTÉRÊT --- */
+.GrilleInterets {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.CarteInteret {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid #d35400 !important;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.CarteInteret:hover {
+  transform: scale(1.02);
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.CarteInteret h3 {
+  color: #ff8c00 !important;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.CarteInteret p {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* --- SLIDER COMPETENCES --- */
+.EnveloppeSlider {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.FenetreSlider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.PisteSlider {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.PageCompetences {
+  min-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 10px;
+}
+
+.CarteSkill {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  color: #333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.BoutonSlider {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #d35400;
+  color: white;
+  font-size: 24px;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+/* --- MODALES --- */
+.OverlayModal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ContenuModal {
+  background: #1a1a1a;
+  padding: 40px;
+  border: 2px solid #d35400;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+}
+
+/* --- SECTION CONTACT --- */
+.BlocContact {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(30, 41, 59, 0.5);
+  border: 2px solid #d35400;
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.FormulaireContact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.GroupeChamps input, 
+.GroupeChamps textarea {
+  width: 100%;
+  padding: 15px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+
+.BoutonEnvoiContact {
+  background: #ff8c00;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* --- HERO & VIDEO --- */
+.ConteneurHeroVideo {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #ff8c00;
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.VideoArrierePlan {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.VoileSombre {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.PhotoProfil {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff8c00;
+}
+
+.HeroDroite h2 {
+  font-size: 2.5rem;
+  color: #ff8c00;
+  text-align: left;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .ConteneurHeroVideo {
+    flex-direction: column;
+    padding: 30px;
+    text-align: center;
+  }
+  .HeroDroite h2 { text-align: center; }
+  .GrilleInfoModal { grid-template-columns: 1fr !important; }
+}
+
+.LienVersGithub {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.LogoGithub {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.LogoGithub:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+/* --- GRILLE DE COMPÉTENCES VERSION APPS --- */
+.GrilleApplications {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.IconeApplication {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.IconeApplication:hover {
+  transform: translateY(-10px);
+}
+
+.ConteneurImageApp {
+  width: 75px;
+  height: 75px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 18px; /* Style iOS */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease;
+}
+
+.IconeApplication:hover .ConteneurImageApp {
+  border-color: #ff8c00;
+  background: rgba(255, 140, 0, 0.1);
+}
+
+.ConteneurImageApp img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.IconeApplication p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grille Interets simple */
+.GrilleInterets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.CarteInteret {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+}
+
+.CarteInteret h3 {
+  color: #ff8c00;
+  margin-bottom: 10px;
+}
+
