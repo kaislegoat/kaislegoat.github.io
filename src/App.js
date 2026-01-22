@@ -36,7 +36,7 @@ const LISTE_PROJETS = [
     imageAperçu: "jeu.png", 
     description: "Moteur de jeu 2D développé intégralement en Java sans moteur externe.",
     critique: "La logique de collision est trop couplée au rendu graphique, rendant les modifications difficiles à tester.",
-    amelioration: "Utiliser un moteur physique découplé et appliquer le State Pattern permettrait de mieux gérer les états du joueur."
+    amelioration: "L'optimisation du code pourrait être bien meilleure. Pour gagner en fluidité, je devrais retravailler les boucles de rendu et mieux gérer la mémoire, surtout quand il y a beaucoup d'éléments affichés en même temps à l'écran."
   },
   { 
     titre: "CV SITE WEB", 
